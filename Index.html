@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson-2</title>
+</head>
+<body>
+<script>
+// 1.
+/*
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);           // 2 значение переменной (a = a + 1), (а = 2)  и просвоилось переменной (с = 2)
+    d = b++; alert(d);           // 1 значение переменной b  просвоилось переменной (d = 1) и  (b = b + 1), (b = 2)
+   c = (2+ ++a); alert(c);      // 5 значение переменной (a = a + 1), (a = 3) результат выражения (2 + a) присвоился переменной (с = 5)
+    d = (2+ b++); alert(d);      // 4 начение выражения  (2 + B ), просвоилось переменной (d = 4) значение переменной (b = b + 1), (b = 3)
+    alert(a);                    // 3 вывелось значение (a = 3)
+    alert(b);                    // 3 вывелось значение (b = 3)
+*/
+// 2.
+/*    var a = 2;
+    var x = 1 + (a *= 2); // в скобках вычисляется a = a * 2,  a = 4,  x = 1 + a, x = 5
+    alert('x = ' + x);
+*/
+//3.
+/* var a =  5;
+var b = 7;
+var result;
+if ((a > 0 && b > 0)){
+    result = a - b;
+    alert('оба числа положительные  их разность a - b = ' + result);
+}
+else if((a > 0 && b < 0) || (a < 0 && b > 0)) {
+    result = a * b;
+    alert('оба числа или разных знаков  их произведение a  * b = ' + result);
+}
+else  {
+    result = a + b;
+    alert('оба числа отрицательные  их сумма a + b = ' + result);
+}
+ */
+//4.
+/*
+var a = 0;
+switch (a) {
+    case 0:
+        alert('0 ');
+        break;
+    case 1:
+        alert('1 ');
+        break;
+    case 2:
+        alert('2 ');
+        break;
+    case 3:
+        alert('3 ');
+        break;
+    case 4:
+        alert('4 ');
+        break;
+    case 5:
+        alert('5 ');
+        break;
+    case 6:
+        alert('6 ');
+        break;
+    case 7:
+        alert('7 ');
+        break;
+    case 8:
+        alert('8 ');
+        break;
+    case 9:
+        alert('9 ');
+        break;
+    case 10:
+        alert('10 ');
+        break;
+    case 11:
+        alert('11 ');
+        break;
+    case 12:
+        alert('12 ');
+        break;
+    case 13:
+        alert('13 ');
+        break;
+    case 14:
+        alert('14 ');
+        break;
+    default: //15
+        alert('15 ');
+        break;
+}
+*/
+
+// 5.
+add = (a, b) => { return a + b };   // сумма
+sub = (a, b) => { return a - b };   // разность
+mul = (a, b) => { return a * b };   // произведение
+div = (a, b) => { return a / b };   // деление
+
+
+//6.
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case 'add':
+            return add(arg1, arg2);
+        case 'sub':
+            return sub(arg1, arg2);
+        case 'mul':
+            return mul(arg1, arg2);
+        case 'div':
+            return div(arg1, arg2);
+        default:
+            alert('Не правельно введены данные');
+    }
+}
+let myTest;
+myTest = mathOperation(2, 2, 'add');
+alert(myTest);
+myTest = mathOperation(2, 2, 'sub');
+alert(myTest);
+myTest = mathOperation(2, 2, 'mul');
+alert(myTest);
+myTest = mathOperation(2, 2, 'div');
+alert(myTest);
+//7.
+
+
+// null ссылка на несуществующий объект, а значит null === 0  false
+if(null > 0) {
+    alert('null больше 0 ');
+}
+if(null >= 0) {
+    alert('null  больше или равно 0 ');
+}
+if (null == 0) {
+    alert('null   равно 0 ');
+}
+// null >= 0, но не null > 0 и не null == 0
+// объянить пока не могу есть в инете но там сложно, для меня сейчас.
+
+//8.
+function power(val, pow){
+    if (pow === 1) {
+        return val;
+    } else {
+        return val * power(val, pow - 1);
+    }
+}
+
+// Доп задание не успеваю к новому уроку ( он завтра уже поздно и мне завтра на работу)
+alert(power(2,10));
+</script>
+</body>
+</html>>
