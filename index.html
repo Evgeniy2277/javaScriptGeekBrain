@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson3</title>
+</head>
+<body>
+<script>
+//1.
+let n = 100;
+let i = 0;
+while (i <= n) {
+    if (i === 0) i++; // Ноль не простое
+    if (i === 1) {
+        i++;
+        console.log(1); //Еденица простое
+    }
+    let j = 2;
+    let prime = true;
+    while( j <= i){
+        if (i % j === 0 && i !== j) {
+            prime = false;
+            break;
+        }
+        j++;
+    }
+    if(prime) console.log(i);
+    i++;
+}
+//2.
+let name1 = 'Первый товар';
+let count1 = 2;
+let price = 6;
+let shopingCart = [[name1, count1, price]];
+let summ = 0;
+for(let i = 0; i < shopingCart.length; i++) {
+    summ = summ + (shopingCart[i][1] * shopingCart[i][2]);
+}
+console.log('Сумма товаров в корзине ' + summ);
+//3.
+function countBasketPrice(arr){
+    let summ = 0;
+    for(let i = 0; i < arr.length; i++) {
+        summ = summ + (arr[i][1] * arr[i][2]);
+    }
+    return summ;
+}
+console.log('Сумма товаров в корзине ' + countBasketPrice(shopingCart));
+//4.
+for (i = 0; i < 10; console.log(i), i++){
+
+}
+//5.
+let str = '';
+for (i = 0; i < 20; i++){
+    str = str + '*';
+    console.log(str);
+}
+
+
+</script>
+</body>
+</html>
