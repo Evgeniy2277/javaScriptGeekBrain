@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson-4</title>
+</head>
+<body>
+<script>
+    'use strict';
+//1.
+
+    function numberToObject(number){
+        if (number > 999) {
+            console.log('Число большее 999');
+            let numberObj = {};
+            return numberObj;
+        }
+        let numberObj = {
+            еденицы: 0,
+            десятки: 0,
+            сотни: 0,
+        }
+        numberObj['сотни'] = Math.floor(number / 100);
+        number = number - (numberObj['сотни'] * 100);
+        numberObj['десятки'] = Math.floor(number / 10);
+        number = number - (numberObj['десятки'] * 10);
+        numberObj['еденицы'] = number;
+        return numberObj;
+    }
+    console.log(numberToObject(0));
+
+const Basket = {
+    goods: [
+        {
+            id_product: 123,
+            product_name: "Ноутбук",
+            price: 45600,
+            quantity: 1
+        },
+        {
+            id_product: 456,
+            product_name: "Мышка",
+            price: 1000,
+            quantity: 1
+        }
+    ],
+    countBasketPrice() {
+        return this.goods.reduce((totalPrice, cartItem) => totalPrice += cartItem.price, 0);
+    }
+};
+
+console.log(Basket.countBasketPrice());
+</script>
+
+
+
+</body>
+</html>
